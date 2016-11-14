@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
-ENV JDK_VERSION=8.17.0.3 \
+ENV JDK_VERSION=8.19.0.1 \
     LANG=en_US.UTF-8
 
 # Pull Zulu OpenJDK binaries from official repository:
