@@ -15,7 +15,7 @@ RUN    yum -y update \
 ENV JAVA_HOME /usr/lib/jvm/zulu-8
 
 # Download and copy JDK8 unlimited strength policy files
-RUN    curl -OL http://www.azulsystems.com/sites/default/files/images/ZuluJCEPolicies.zip \
+RUN    curl -OL http://cdn.azul.com/zcek/bin/ZuluJCEPolicies.zip \
     && yum -y install unzip \
     && yum clean all \
     && unzip ZuluJCEPolicies.zip \
