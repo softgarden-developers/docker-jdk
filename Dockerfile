@@ -14,8 +14,8 @@ enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
 " > /etc/yum.repos.d/adoptopenjdk.repo \
-    && yum -y install adoptopenjdk-11-hotspot-${JDK_VERSION}-1 \
+    && yum -y install adoptopenjdk-11-openj9-${JDK_VERSION}-1 \
     && yum clean all
 
 # Set the JAVA_HOME variable to make it clear where Java is located
-ENV JAVA_HOME /usr/lib/jvm/adoptopenjdk-11-hotspot
+ENV JAVA_HOME /usr/lib/jvm/adoptopenjdk-11-openj9
