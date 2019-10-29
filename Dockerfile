@@ -1,7 +1,7 @@
 FROM centos:7
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
-ENV JDK_VERSION=11.0.4.11 \
+ENV JDK_VERSION=11.0.5.10 \
     LANG=en_US.UTF-8
 
 # install openjdk-devel
