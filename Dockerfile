@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
 ENV JDK_VERSION=11.0.5.10 \
