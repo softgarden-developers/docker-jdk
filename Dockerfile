@@ -1,6 +1,8 @@
 FROM centos:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
+ENV IMAGE_VERSION=openjdk-11.0.5
+
 ENV JDK_VERSION=11.0.5.10 \
     LANG=en_US.UTF-8
 
