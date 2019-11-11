@@ -1,4 +1,4 @@
-FROM centos:7
+FROM centos:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
 ENV JDK_VERSION=11.0.5+10 \
@@ -9,7 +9,7 @@ RUN    yum -y update \
     && echo -e "\
 [AdoptOpenJDK] \n\
 name=AdoptOpenJDK \n\
-baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/7/$(uname -m) \n\
+baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/8/$(uname -m) \n\
 enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
