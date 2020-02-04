@@ -9,6 +9,7 @@ ENV JDK_VERSION=11.0.5.10 \
 # install openjdk-devel
 RUN    yum -y update \
     && yum -y install java-11-openjdk-devel-${JDK_VERSION} \
+    && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 
 # Set the JAVA_HOME variable to make it clear where Java is located
