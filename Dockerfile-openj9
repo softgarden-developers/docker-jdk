@@ -3,7 +3,7 @@ MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
 ENV IMAGE_VERSION=adoptopenjdk-openj9-11.0.9
 
-ENV JDK_VERSION=11.0.9+11.1 \
+ENV JDK_VERSION=11.0.9+11.openj9_0.23.0 \
     LANG=en_US.UTF-8
 
 # install AdoptOpenJDK from their official repository
@@ -16,7 +16,7 @@ enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
 " > /etc/yum.repos.d/adoptopenjdk.repo \
-    && yum -y install adoptopenjdk-11-openj9-${JDK_VERSION}-1 \
+    && yum -y install adoptopenjdk-11-openj9-${JDK_VERSION} \
     && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 

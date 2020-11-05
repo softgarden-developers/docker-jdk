@@ -16,7 +16,7 @@ enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
 " > /etc/yum.repos.d/adoptopenjdk.repo \
-    && yum -y install adoptopenjdk-11-hotspot-${JDK_VERSION}-1 \
+    && yum -y install adoptopenjdk-11-hotspot-${JDK_VERSION} \
     && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 
