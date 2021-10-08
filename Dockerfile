@@ -1,9 +1,9 @@
 FROM centos:8
 MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
 
-ENV IMAGE_VERSION=openjdk-11.0.11
+ENV IMAGE_VERSION=openjdk-11.0.12
 
-ENV JDK_VERSION=11.0.11.0.9 \
+ENV JDK_VERSION=11.0.12.0.7 \
     LANG=en_US.UTF-8
 
 # install openjdk-devel
