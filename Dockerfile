@@ -12,8 +12,10 @@ RUN    yum -y install java-11-openjdk-devel-${JDK_VERSION} \
 ENV JAVA_HOME /usr/lib/jvm/java
 
 
-ARG REVISION
+ARG REPOSITORY_REVISION
+ARG REPOSITORY_URL
 LABEL org.opencontainers.image.authors="Stefan Schueffler <s.schueffler@softgarden.de>"
 LABEL org.opencontainers.image.vendor="softgarden e-recruiting GmbH"
-LABEL org.opencontainers.image.revision=$REVISION
+LABEL org.opencontainers.image.source=$REPOSITORY_URL
+LABEL org.opencontainers.image.revision=$REPOSITORY_REVISION
 LABEL org.opencontainers.image.version=openjdk-11.0.14
