@@ -1,15 +1,19 @@
-FROM centos:8
-MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
-
-ENV IMAGE_VERSION=adoptopenjdk-openj9-11.0.12
+FROM docker.softgarden.de/sgops/base:8
 
 ENV LANG=en_US.UTF-8
 
-# install AdoptOpenJDK from their official repository
+# install IBM Semeru from their official repository
 RUN    yum -y update \
-    && yum install -y https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.12%2B7_openj9-0.27.0/ibm-semeru-open-11-jdk-11.0-12.0.x86_64.rpm \
+    && yum install -y https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.14.1%2B1_openj9-0.30.1/ibm-semeru-open-11-jdk-11.0.14.1.1_0.30.1-1.x86_64.rpm \
     && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 
 # Set the JAVA_HOME variable to make it clear where Java is located
 ENV JAVA_HOME /usr/lib/jvm/ibm-semeru-open-11-jdk
+
+
+ARG REVISION
+LABEL org.opencontainers.image.authors="Stefan Schueffler <s.schueffler@softgarden.de>"
+LABEL org.opencontainers.image.vendor="softgarden e-recruiting GmbH"
+LABEL org.opencontainers.image.revision=$REVISION
+LABEL org.opencontainers.image.version=ibm-semeru-openj9-11.0.14

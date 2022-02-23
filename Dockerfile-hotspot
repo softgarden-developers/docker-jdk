@@ -1,7 +1,4 @@
-FROM centos:8
-MAINTAINER Stefan Schueffler <s.schueffler@softgarden.de>
-
-ENV IMAGE_VERSION=adoptopenjdk-hotspot-11.0.11
+FROM docker.softgarden.de/sgops/base:8
 
 ENV JDK_VERSION=11.0.11+9 \
     LANG=en_US.UTF-8
@@ -11,7 +8,7 @@ RUN    yum -y update \
     && echo -e "\
 [AdoptOpenJDK] \n\
 name=AdoptOpenJDK \n\
-baseurl=http://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/8/$(uname -m) \n\
+baseurl=https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/8/$(uname -m) \n\
 enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
@@ -22,3 +19,10 @@ gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
 
 # Set the JAVA_HOME variable to make it clear where Java is located
 ENV JAVA_HOME /usr/lib/jvm/adoptopenjdk-11-hotspot
+
+
+ARG REVISION
+LABEL org.opencontainers.image.authors="Stefan Schueffler <s.schueffler@softgarden.de>"
+LABEL org.opencontainers.image.vendor="softgarden e-recruiting GmbH"
+LABEL org.opencontainers.image.revision=$REVISION
+LABEL org.opencontainers.image.version=adoptopenjdk-hotspot-11.0.11
