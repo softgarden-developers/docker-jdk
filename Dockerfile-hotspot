@@ -1,23 +1,23 @@
 FROM docker.softgarden.de/sgops/base:8
 
-ENV JDK_VERSION=11.0.11+9 \
+ENV JDK_VERSION=11.0.14.1.0.1 \
     LANG=en_US.UTF-8
 
-# install AdoptOpenJDK from their official repository
+# install Adoptium from their official repository
 RUN    echo -e "\
-[AdoptOpenJDK] \n\
-name=AdoptOpenJDK \n\
-baseurl=https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/centos/8/$(uname -m) \n\
+[Adoptium] \n\
+name=Adoptium \n\
+baseurl=https://packages.adoptium.net/artifactory/rpm/centos/8/$(uname -m) \n\
 enabled=1 \n\
 gpgcheck=1 \n\
-gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public \n\
-" > /etc/yum.repos.d/adoptopenjdk.repo \
-    && yum -y install adoptopenjdk-11-hotspot-${JDK_VERSION} \
+gpgkey=https://packages.adoptium.net/artifactory/api/gpg/key/public \n\
+" > /etc/yum.repos.d/adoptium.repo \
+    && yum -y install temurin-11-jdk-${JDK_VERSION} \
     && yum -y install langpacks-de glibc-all-langpacks \
-    && yum clean all
+&& yum clean all
 
 # Set the JAVA_HOME variable to make it clear where Java is located
-ENV JAVA_HOME /usr/lib/jvm/adoptopenjdk-11-hotspot
+ENV JAVA_HOME /usr/lib/jvm/temurin-11-jdk
 
 
 ARG REPOSITORY_REVISION
