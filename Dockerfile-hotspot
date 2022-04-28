@@ -7,7 +7,7 @@ ENV JDK_VERSION=11.0.14.1.0.1 \
 RUN    echo -e "\
 [Adoptium] \n\
 name=Adoptium \n\
-baseurl=https://packages.adoptium.net/artifactory/rpm/centos/8/$(uname -m) \n\
+baseurl=https://packages.adoptium.net/artifactory/rpm/centos/$releasever/$basearch \n\
 enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://packages.adoptium.net/artifactory/api/gpg/key/public \n\
