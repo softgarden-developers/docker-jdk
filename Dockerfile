@@ -1,10 +1,10 @@
 FROM docker.softgarden.de/sgops/base:8
 
-ENV JDK_VERSION=11.0.15.0.10 \
+ENV JDK_VERSION=11 \
     LANG=en_US.UTF-8
 
 # install openjdk-devel
-RUN    yum -y install java-11-openjdk-devel-${JDK_VERSION} \
+RUN    yum -y install java-11-openjdk-devel \
     && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 
@@ -18,4 +18,4 @@ LABEL org.opencontainers.image.authors="Stefan Schueffler <s.schueffler@softgard
 LABEL org.opencontainers.image.vendor="softgarden e-recruiting GmbH"
 LABEL org.opencontainers.image.source=$REPOSITORY_URL
 LABEL org.opencontainers.image.revision=$REPOSITORY_REVISION
-LABEL org.opencontainers.image.version=openjdk-11.0.15
+LABEL org.opencontainers.image.version=openjdk-11

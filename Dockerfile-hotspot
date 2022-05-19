@@ -1,6 +1,6 @@
 FROM docker.softgarden.de/sgops/base:8
 
-ENV JDK_VERSION=11.0.15.0.0.10 \
+ENV JDK_VERSION=11 \
     LANG=en_US.UTF-8
 
 # install Adoptium from their official repository
@@ -12,7 +12,7 @@ enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://packages.adoptium.net/artifactory/api/gpg/key/public \n\
 " > /etc/yum.repos.d/adoptium.repo \
-    && yum -y install temurin-11-jdk-${JDK_VERSION} \
+    && yum -y install temurin-11-jdk \
     && yum -y install langpacks-de glibc-all-langpacks \
 && yum clean all
 
@@ -26,4 +26,4 @@ LABEL org.opencontainers.image.authors="Stefan Schueffler <s.schueffler@softgard
 LABEL org.opencontainers.image.vendor="softgarden e-recruiting GmbH"
 LABEL org.opencontainers.image.source=$REPOSITORY_URL
 LABEL org.opencontainers.image.revision=$REPOSITORY_REVISION
-LABEL org.opencontainers.image.version=adoptium-temurin-11.0.15
+LABEL org.opencontainers.image.version=adoptium-temurin-11
