@@ -1,6 +1,6 @@
 FROM docker.softgarden.de/sgops/base:8
 
-ENV JDK_VERSION=11.0.15.0.9 \
+ENV JDK_VERSION=11.0.15.0.10 \
     LANG=en_US.UTF-8
 
 # install openjdk-devel
