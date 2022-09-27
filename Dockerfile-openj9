@@ -3,7 +3,7 @@ FROM docker.softgarden.de/sgops/base:8
 ENV LANG=en_US.UTF-8
 
 # install IBM Semeru from their official repository
-RUN    yum install -y https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.15%2B10_openj9-0.32.0/ibm-semeru-open-11-jdk-11.0.15.10_0.32.0-1.$(uname -m).rpm \
+RUN    yum install -y https://github.com/ibmruntimes/semeru11-binaries/releases/download/jdk-11.0.16.1%2B1_openj9-0.33.1/ibm-semeru-open-11-jdk-11.0.16.1.1_0.33.1-1.$(uname -m).rpm \
     && yum -y install langpacks-de glibc-all-langpacks \
     && yum clean all
 
