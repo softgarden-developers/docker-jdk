@@ -1,4 +1,4 @@
-FROM docker.softgarden.de/sgops/base:8
+FROM docker.softgarden.de/sgops/base:9
 
 ENV JDK_VERSION=11 \
     LANG=en_US.UTF-8

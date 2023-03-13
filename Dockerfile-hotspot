@@ -1,4 +1,4 @@
-FROM docker.softgarden.de/sgops/base:8
+FROM docker.softgarden.de/sgops/base:9
 
 ENV JDK_VERSION=11 \
     LANG=en_US.UTF-8
@@ -7,7 +7,7 @@ ENV JDK_VERSION=11 \
 RUN    echo -e "\
 [Adoptium] \n\
 name=Adoptium \n\
-baseurl=https://packages.adoptium.net/artifactory/rpm/centos/8/$(uname -m) \n\
+baseurl=https://packages.adoptium.net/artifactory/rpm/rhel/\$releasever/\$basearch \n\
 enabled=1 \n\
 gpgcheck=1 \n\
 gpgkey=https://packages.adoptium.net/artifactory/api/gpg/key/public \n\
