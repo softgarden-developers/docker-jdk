@@ -1,15 +1,7 @@
-FROM docker.softgarden.de/sgops/base:9-slim
+FROM docker.softgarden.de/eclipse-temurin:11-jdk-ubi9-minimal
 
 ENV JDK_VERSION=11 \
     LANG=en_US.UTF-8
-
-# install openjdk-devel
-RUN    microdnf -y install java-11-openjdk-devel \
-    && microdnf -y install langpacks-de glibc-all-langpacks \
-    && microdnf clean all
-
-# Set the JAVA_HOME variable to make it clear where Java is located
-ENV JAVA_HOME /usr/lib/jvm/java
 
 
 ARG REPOSITORY_REVISION

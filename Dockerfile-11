@@ -5,7 +5,7 @@ ENV JDK_VERSION=11 \
 
 # install openjdk-devel
 RUN    dnf -y install java-11-openjdk-devel \
-    && dnf -y install langpacks-de glibc-all-langpacks \
+    && dnf -y install langpacks-en \
     && dnf clean all
 
 # Set the JAVA_HOME variable to make it clear where Java is located
